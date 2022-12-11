@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  app:
+    image: myauth
+    build:
+      args:
+        - target=dev
+    environment:
+      PORT: 8080
+    volumes:
+      - .:/app
+    ports:
+      - "18080:8080"
+    env_file:
+      - .env
